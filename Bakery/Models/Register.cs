@@ -2,6 +2,14 @@ using System;
 
 namespace Bakery.Models
 {
+  public class Register
+  {
+    public int Price { get; }
+    public Register(int amount)
+    {
+      Price = amount;
+    }
+  }
   public class Bread
   {
     public int Price { get; set; }

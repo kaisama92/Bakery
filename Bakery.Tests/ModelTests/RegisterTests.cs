@@ -13,7 +13,7 @@ namespace Bakery.Tests
       Assert.AreEqual(typeof(Bread), newBread.GetType());
     }
     [TestMethod]
-    public void GetPrice_ReturnsPrice_Int()
+    public void GetObjectPrice_ReturnsPrice_Int()
     {
       Bread newBread = new Bread();
       int price = 5;
@@ -22,7 +22,7 @@ namespace Bakery.Tests
     }
 
     [TestMethod]
-    public void GetDiscount_ReturnsDiscount_Int()
+    public void GetObjectDiscount_ReturnsDiscount_Int()
     {
       Bread newBread = new Bread();
       int discount = 3;
@@ -41,7 +41,7 @@ namespace Bakery.Tests
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
     [TestMethod]
-    public void GetPrice_ReturnsPrice_Int()
+    public void GetObjectPrice_ReturnsPrice_Int()
     {
       Pastry newPastry = new Pastry();
       int price = 2;
@@ -49,12 +49,31 @@ namespace Bakery.Tests
       Assert.AreEqual(price, result);
     }
     [TestMethod]
-    public void GetDiscount_ReturnsPrice_Int()
+    public void GetObjectDiscount_ReturnsPrice_Int()
     {
       Pastry newPastry = new Pastry();
       int discount = 4;
       int result = newPastry.Discount;
       Assert.AreEqual(discount, result);
+    }
+  }
+  [TestClass]
+  public class RegisterTests
+  {
+    [TestMethod]
+    public void RegisterConstructor_CreatesInstanceOfRegister_Register()
+    {
+      int amount = 5;
+      Register newRegister = new Register(amount);
+      Assert.AreEqual(typeof(Register), newRegister.GetType());
+    }
+    [TestMethod]
+    public void GetObjectPrice_ReturnsPriceOfRegister_Int()
+    {
+      int amount = 5;
+      Register newRegister = new Register(amount);
+      int result = newRegister.Price;
+      Assert.AreEqual(amount, result);
     }
   }
 }
