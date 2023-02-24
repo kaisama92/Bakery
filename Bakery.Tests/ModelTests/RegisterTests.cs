@@ -30,4 +30,15 @@ namespace Bakery.Tests
       Assert.AreEqual(discount, result);
     }
   }
+
+  [TestClass]
+  public class PastryTests
+  {
+    [TestMethod]
+    public void PastryConstructor_CreatesInstanceofPastry_Pastry()
+    {
+      Pastry newPastry = new Pastry();
+      Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+    }
+  }
 }
