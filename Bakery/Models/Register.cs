@@ -12,4 +12,9 @@ namespace Bakery.Models
       Discount = 3;
     }
   }
+  
+  public class Pastry
+  {
+    
+  }
 }
