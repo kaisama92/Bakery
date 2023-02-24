@@ -18,4 +18,4 @@ class Program
     int pastryPrice = newPastry.GetTotal(pastries);
     Console.WriteLine($"{loaves} loaves and {pastries} pastries comes to a total of ${breadPrice + pastryPrice}");
   }
-}
+} 
