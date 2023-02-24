@@ -48,5 +48,13 @@ namespace Bakery.Tests
       int result = newPastry.Price;
       Assert.AreEqual(price, result);
     }
+    [TestMethod]
+    public void GetDiscount_ReturnsPrice_Int()
+    {
+      Pastry newPastry = new Pastry();
+      int discount = 4;
+      int result = newPastry.Discount;
+      Assert.AreEqual(discount, result);
+    }
   }
 }
