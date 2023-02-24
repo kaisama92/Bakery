@@ -63,17 +63,22 @@ namespace Bakery.Tests
     [TestMethod]
     public void RegisterConstructor_CreatesInstanceOfRegister_Register()
     {
-      int amount = 5;
-      Register newRegister = new Register(amount);
+      Register newRegister = new Register();
       Assert.AreEqual(typeof(Register), newRegister.GetType());
     }
     [TestMethod]
     public void GetObjectPrice_ReturnsPriceOfRegister_Int()
     {
-      int amount = 5;
-      Register newRegister = new Register(amount);
+      Register newRegister = new Register();
       int result = newRegister.Price;
-      Assert.AreEqual(amount, result);
+      Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void GetObjectDiscount_ReturnsDiscountOfRegister_Int()
+    {
+      Register newRegister = new Register();
+      int result = newRegister.Discount;
+      Assert.AreEqual(2, result);
     }
   }
 }
