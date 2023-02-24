@@ -6,10 +6,6 @@ namespace Bakery.Models
   {
     public int Price { get; } = 1;
     public int Discount { get; } =  2;
-    public Register()
-    {
-      
-    }
   }
   public class Bread
   {
