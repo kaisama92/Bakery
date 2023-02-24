@@ -10,10 +10,12 @@ class Program
     Pastry newPastry = new Pastry();
     Console.WriteLine($"The Price of Bread is {newBread.Price}");
     Console.WriteLine($"The Price of Pastries is {newPastry.Price}");
-    Console.WriteLine("How many loafs of bread would you like?");
-    int bread = Int32.Parse(Console.ReadLine());
+    Console.WriteLine("How many loaves of bread would you like?");
+    int loaves = Int32.Parse(Console.ReadLine());
     Console.WriteLine("How many pastries would you like?");
-    int pastry = Int32.Parse(Console.ReadLine());
-    
+    int pastries = Int32.Parse(Console.ReadLine());
+    int breadPrice = newBread.GetTotal(loaves);
+    int pastryPrice = newPastry.GetTotal(pastries);
+    Console.WriteLine($"{loaves} loaves and {pastries} pastries comes to a total of ${breadPrice + pastryPrice}");
   }
 }
