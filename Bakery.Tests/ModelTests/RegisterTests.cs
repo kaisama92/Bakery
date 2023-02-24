@@ -80,5 +80,12 @@ namespace Bakery.Tests
       int result = newRegister.Discount;
       Assert.AreEqual(2, result);
     }
+    [TestMethod]
+    public void GetTotal_ReturnsTheTotalPriceOfANumberOfObjects_Int()
+    {
+      Register newRegister = new Register();
+      int input = 5;
+      Assert.AreEqual(3, newRegister.GetTotal(input));
+    }
   }
 }
