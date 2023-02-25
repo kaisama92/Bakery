@@ -13,17 +13,45 @@ class Program
       Console.WriteLine($"The Price of Bread is {newBread.Price}");
       Console.WriteLine($"The Price of Pastries is {newPastry.Price}");
       Console.WriteLine("How many loaves of bread would you like?");
-      int loaves = Int32.Parse(Console.ReadLine());
-      if (typeof(Int32) != loaves.GetType())
+      // int loaves = Int32.Parse(Console.ReadLine());
+      string loavesString = Console.ReadLine();
+      string[] loavesArr = loavesString.Split(" ");
+      if (loavesArr.Length > 1) 
+      {
+        throw new ArgumentException("Input needs to have no spaces");
+      }
+      int loaves = Int32.Parse(loavesString);
       Console.WriteLine("How many pastries would you like?");
-      int pastries = Int32.Parse(Console.ReadLine());
+      string pastriesString = Console.ReadLine();
+      string[] pastriesArr = pastriesString.Split("");
+      if (pastriesArr.Length > 1)
+      {
+        throw new ArgumentException("Input needs to have no spaces");
+      }
+      int pastries = Int32.Parse(pastriesString);
       int breadPrice = newBread.GetTotal(loaves);
       int pastryPrice = newPastry.GetTotal(pastries);
       Console.WriteLine($"{loaves} loaves and {pastries} pastries comes to a total of ${breadPrice + pastryPrice}");
     }
-    catch
+    catch (ArgumentException e)
     {
-
+      Console.WriteLine(e);
+      Program.Main();
+    }
+    catch (Exception ex)
+    {
+      if (ex.Message == "Input string was not in a correct format.")
+      {
+        Console.WriteLine("The input needs to be a number");
+      }
+      else
+      {
+      Console.WriteLine("Message = {0}", ex.Message);
+      // Console.WriteLine("Source = {0}", ex.Source);
+      Console.WriteLine("StackTrace = {0}", ex.StackTrace);
+      // Console.WriteLine("TargetSite = {0}", ex.TargetSite);
+      }
+      Program.Main();
     }
   }
 } 
