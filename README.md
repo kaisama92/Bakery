@@ -18,6 +18,9 @@ _This C# application uses the command console to interact with the user, listing
 * _Download .NET 6 SDK_
 * _Open a new terminal in the Bakery directory_
 * _Enter the command dotnet run_
+* _To exit the program use Ctrl+C_
+* _To run tests on the business logic in Bakery/Models, first navigate into Bakery.Tests_
+* _Then, to execute tests, type in the command dotnet test into the command line._
 
 ## Known Bugs
 
